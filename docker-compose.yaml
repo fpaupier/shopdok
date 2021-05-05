@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  product-service:
+    network_mode: host
+    build: ./product
+    volumes:
+      - ./product:/usr/src/app
+        #    ports:
+        # - 5001:80
