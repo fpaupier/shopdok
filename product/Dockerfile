@@ -1,11 +1,11 @@
-FROM python:3
-
-COPY . /usr/src/app
-
-WORKDIR /usr/src/app
-
-RUN pip install --no-cache-dir -r requirements.txt
-
+FROM python:3.7-alpine
+WORKDIR /code
+ENV FLASK_APP=api.py
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=80
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 EXPOSE 80
-
-CMD ["python", "api.py"]
+COPY . .
+CMD ["flask", "run"]
