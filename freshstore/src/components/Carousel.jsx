@@ -35,7 +35,10 @@ class Carousel extends React.Component {
     render() {
         const {products, error, isLoaded} = this.state
         if (error)
-            return <h1>Error! Failed to get products from backend :(</h1>
+            return <div>
+                        <h1>Error! Failed to get products from backend :(</h1>
+                        <p>Got error: {error.message}</p>
+                    </div>
         if (!isLoaded)
             return <h2>App initialization...</h2>
         return (
