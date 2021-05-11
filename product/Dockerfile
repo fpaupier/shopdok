@@ -1,6 +1,7 @@
 FROM python:3.7-alpine
 WORKDIR /code
 ENV FLASK_APP=api.py
+ENV FLASK_DEBUG=1
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=80
 RUN apk add --no-cache gcc musl-dev linux-headers
