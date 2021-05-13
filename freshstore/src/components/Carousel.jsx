@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import Catalog from './Catalog';
 
 class Carousel extends React.Component {
 
@@ -13,7 +13,7 @@ class Carousel extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://product-service:80")
+        fetch("http://localhost:5001")
         .then(res => res.json())
         .then(
             result => {
@@ -41,11 +41,8 @@ class Carousel extends React.Component {
                     </div>
         if (!isLoaded)
             return <h2>App initialization...</h2>
-        return (
-            <div>
-                products[0]
-            </div>
-        )
+        return  <Catalog products={products} />
+                
     }
 }
 
