@@ -3,5 +3,5 @@
 .venv
 .env
 __pycache__
-
+db/db-data
 freshstore/node_modules
